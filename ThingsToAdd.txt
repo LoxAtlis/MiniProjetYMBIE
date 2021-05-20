@@ -1,0 +1,28 @@
+800x600
+
+-----Tirer des projectiles-----
+
+#vitesse des balles
+bullet_speed = [?0, 4?]
+
+#click droit ou gauche
+left, right = pygame.mouse.get_pressed()
+if right:
+	def shoot()
+if left:
+	def shoot()
+
+#fonction pour tirer une balle
+def shoot():
+	bullet = Actor("NomDeL'Image")
+	bullet.pos = player.pos
+
+def update() :
+bullet.pos = [bullet.pos[0] + bullet_speed[0], bullet.pos[1] + bullet.speed[1]]
+
+-----Collision avec les ennemis-----
+if player.colliderect(bullet):
+????faire une liste????
+
+-----Game Over-----
+full page ? Jeu continue en arrière plan ?
