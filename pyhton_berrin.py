@@ -26,7 +26,7 @@ def setup_ennemy():
             for y in range(0, 50, random_number):          # changez parraport au assest ennemie (grandeur largeurs etc? ?? 
 
 
-                ennemy = Actor("brick-perso", anchor=["left", "top"]) 
+                ennemy = Actor("ennemy", anchor=["left", "top"]) 
                 ennemy.pos = [x, y]
                 all_ennemy.append(ennemy)
             
@@ -56,3 +56,25 @@ def update(dt):
     # if ball.right >= WIDTH or ball.left <= 0:  # ball.right, donne la 
     #                                         # position a droit de la ball
     #     invert_horizontal_speed()
+
+
+# score = 0
+
+# def draw():
+#     showing_score()
+
+# def showing_score():
+#     global ball_fall_count
+
+#     if ball_fall_count == 3:
+#         screen.draw.text("score: " + str(score), midtop=(400, 350), owidth=1.5, ocolor=("purple"), color="pink")
+
+#         all_bricks = []
+
+#     else:
+#         screen.draw.text("score: " + str(score), bottomright=(790, 599), owidth=1.5, ocolor=("purple"), color="pink")
+
+# def update(dt):
+#     global score 
+
+# score =  score + 10 # placer achaque ennemie touché 
