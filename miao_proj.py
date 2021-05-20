@@ -75,6 +75,9 @@ def update_asteroid(dt):
         reboot()
     
 
+    
+
+
 def update(dt):
     update_asteroid(dt)
     
