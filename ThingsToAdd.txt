@@ -26,3 +26,14 @@ if player.colliderect(bullet):
 
 -----Game Over-----
 full page ? Jeu continue en arrière plan ?
+
+loose = False
+
+gameover = Actor("ImageName")
+
+def draw():
+	if loose:
+		gameover.draw()
+def update():
+	if (ennemy.bottom > HEIGHT or ennemy.colliderect(player)) and not loose:
+	loose = True
