@@ -10,7 +10,7 @@ player.pos = [400,550]
 
 bullet = Actor("bullet")
 bullet.pos = player.pos
-bullet_speed = [0, -4]
+bullet_speed = [0, -15]
 
 gameover = Actor("go-im")
 
