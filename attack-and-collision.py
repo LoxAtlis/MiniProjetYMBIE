@@ -12,12 +12,16 @@ bullet = Actor("bullet")
 bullet.pos = player.pos
 bullet_speed = [0, -15]
 
+ennemy = Actor("ennemy")
+ennemy.pos = [400, 300]
+
 gameover = Actor("go-im")
 
 def draw():
     screen.clear()
     bullet.draw()
     player.draw()
+    ennemy.draw()
 
     if loose:
         gameover.draw()
