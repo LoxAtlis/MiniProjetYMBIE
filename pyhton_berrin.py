@@ -9,27 +9,23 @@ HEIGHT = 600
 all_ennemy = []
 ennemy_speed = [0, 3]
 
-game_over = 0
+loose = 0
 
 # Placer les Ennemies en haut en dehors de la fenetre 
 def setup_ennemy():
     global all_ennemy
-    global game_over
 
-    while game_over < 4 :
-
-        game_over = game_over + 1
-        random_number = randint(100,200)
-
-        for x in range (0,800, random_number):           # debut, fin, espacement
-            print(randint(1, 800))
-            for y in range(0, 50, random_number):          # changez parraport au assest ennemie (grandeur largeurs etc? ?? 
+    random_number = randint(100,200)
+    
+    for x in range (0,800, random_number):           # debut, fin, espacement
+        print(randint(1, 800))
+        for y in range(0, 50, random_number):          # changez parraport au assest ennemie (grandeur largeurs etc? ?? 
 
 
-                ennemy = Actor("ennemy", anchor=["left", "top"]) 
-                ennemy.pos = [x, y]
-                all_ennemy.append(ennemy)
-            
+            ennemy = Actor("brick-perso", anchor=["left", "top"]) 
+            ennemy.pos = [x, y]
+            all_ennemy.append(ennemy)
+        
 setup_ennemy()
 
 def draw():
@@ -39,8 +35,9 @@ def draw():
     # bg1.draw()
     # player.draw()
 
-    for ennemy in all_ennemy:
-        ennemy.draw()
+    while loose < 2:
+        for ennemy in all_ennemy:
+            ennemy.draw()
 
 def update(dt):
 
