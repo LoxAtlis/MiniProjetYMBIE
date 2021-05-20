@@ -5,7 +5,7 @@ bg1 = Actor("bg1")
 bg1.pos = [400,300]
 
 player = Actor("player")
-player.pos = [400,300]
+player.pos = [400,550]
 
 
 
