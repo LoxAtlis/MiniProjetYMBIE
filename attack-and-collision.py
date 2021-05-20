@@ -8,7 +8,7 @@ loose = False
 player = Actor("player")
 player.pos = [400,550]
 
-bullet = Actor("projectile")
+bullet = Actor("bullet")
 bullet.pos = player.pos
 bullet_speed = [0, -4]
 
@@ -16,7 +16,6 @@ gameover = Actor("go-im")
 
 def draw():
     screen.clear()
-
     bullet.draw()
     player.draw()
 
@@ -33,7 +32,6 @@ def on_mouse_down(button):
 
 #fonction pour tirer une bullet
 def shoot():
-	bullet = Actor("projectile")
 	bullet.pos = player.pos
 
 def update():
