@@ -16,13 +16,20 @@ all_asteroid = []
 
 
 random_number = randint(400,600)
-for x in range (0,800, random_number):           # debut, fin, espacement
-    
-    for y in range(0, 50, random_number):          # changez parraport au assest ennemie (grandeur largeurs a
+for x in range (0,800, random_number):           
+    for y in range(0, 50, random_number):          
         asteroid = Actor("asteroid128", anchor=["left", "top"])
         asteroid.pos = [x,y]
         asteroid_speed = [0,300]
         all_asteroid.append(asteroid)
+
+for x in range (200,600, random_number):           
+    for y in range(0, 50, random_number):          
+        asteroid_petit = Actor("asteroid64", anchor=["left", "top"])
+        asteroid_petit.pos = [x,y]
+        asteroid_petit_speed = [0,200]
+        all_asteroid.append(asteroid_petit)
+
 
     
 def update_asteroid(dt):
@@ -35,6 +42,14 @@ def update_asteroid(dt):
         new_x = asteroid.pos[0] + asteroid_speed[0] *dt
         asteroid.pos = [new_x,new_y]
         #all_asteroid.append(asteroid)
+    
+    for asteroid_petit in all_asteroid:   # (pour creer un asteroid)
+        new_y = asteroid_petit.pos[1] + asteroid_petit_speed[1] *dt
+        new_x = asteroid_petit.pos[0] + asteroid_petit_speed[0] *dt
+        asteroid_petit.pos = [new_x,new_y]
+
+    
+    
 def update(dt):
     update_asteroid(dt)
    
@@ -43,6 +58,8 @@ def draw():
     bg1.draw()
     for asteroid in all_asteroid:
         asteroid.draw()
+    for asteroid_petit in all_asteroid:
+        asteroid_petit.draw()
     player.draw()
 
 def on_mouse_move(pos):
