@@ -10,7 +10,7 @@ player.pos = [400,550]
 
 
 all_asteroid = []
-
+all_Ennemy = []
 
 # asteroid_apparition = 50
 random_number = randint(400,600)
@@ -23,16 +23,16 @@ for x in range (0,800, random_number):
 
     for x in range (200,600, random_number):           
         for y in range(0, 50, random_number):          
-            asteroid_petit = Actor("asteroid64", anchor=["left", "top"])
-            asteroid_petit.pos = [x,y]
-            asteroid_petit_speed = [0,200]
-            all_asteroid.append(asteroid_petit)
+            Ennemy = Actor("ennemy", anchor=["left", "top"])
+            Ennemy.pos = [x,y]
+            Ennemy_speed = [0,200]
+            all_Ennemy.append(Ennemy)
 
 def reboot():
     global  all_asteroid
     global asteroid
     global asteroid_speed
-    global asteroid_petit
+    global Ennemy
     global asteroid_petit_speed
     random_number = randint(400,600)
     for x in range (0,800, random_number):           
@@ -44,10 +44,10 @@ def reboot():
 
     for x in range (200,600, random_number):           
         for y in range(0, 50, random_number):          
-            asteroid_petit = Actor("asteroid64", anchor=["left", "top"])
-            asteroid_petit.pos = [x,y]
-            asteroid_petit_speed = [0,200]
-            all_asteroid.append(asteroid_petit)
+            Ennemy = Actor("ennemy", anchor=["left", "top"])
+            Ennemy.pos = [x,y]
+            Ennemy_speed = [0,200]
+            all_Ennemy.append(Ennemy)
 
 
 
@@ -56,8 +56,8 @@ def update_asteroid(dt):
     global  all_asteroid
     global asteroid
     global asteroid_speed
-    global asteroid_petit
-    global asteroid_petit_speed
+    global Ennemy
+    global Ennemy_speed
 
 
     for asteroid in all_asteroid:   # (pour creer un asteroid)
@@ -66,10 +66,10 @@ def update_asteroid(dt):
         asteroid.pos = [new_x,new_y]
         #all_asteroid.append(asteroid)
     
-    for asteroid_petit in all_asteroid:   # (pour creer un asteroid)
-        new_y = asteroid_petit.pos[1] + asteroid_petit_speed[1] *dt
-        new_x = asteroid_petit.pos[0] + asteroid_petit_speed[0] *dt
-        asteroid_petit.pos = [new_x,new_y]
+    for Ennemy in all_Ennemy:   # (pour creer un asteroid)
+        new_y = Ennemy.pos[1] + Ennemy_speed[1] *dt
+        new_x = Ennemy.pos[0] + Ennemy_speed[0] *dt
+        Ennemy.pos = [new_x,new_y]
 
     if asteroid.pos[1] > 600:
         reboot()
@@ -87,8 +87,8 @@ def draw():
     bg1.draw()
     for asteroid in all_asteroid:
         asteroid.draw()
-    for asteroid_petit in all_asteroid:
-        asteroid_petit.draw()
+    for Ennemy in all_Ennemy:
+        Ennemy.draw()
     player.draw()
 
 def on_mouse_move(pos):
