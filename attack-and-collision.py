@@ -46,8 +46,8 @@ def update():
     bullet.pos = [new_x, new_y]
 
 # ATTENTION Il faut adapeter le code si on utilise une liste pour les ennemies
-    if bullet.colliderect(ennemy):
-        ennemy.remove()
+    # if bullet.colliderect(ennemy):
+    #     ennemy.remove()
 
     # if (ennemy.bottom > HEIGHT or ennemy.colliderect(player)) and not loose:
 	#     loose = True
